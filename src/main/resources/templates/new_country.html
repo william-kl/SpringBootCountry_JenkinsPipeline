@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+	  
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+	<h1>Country Registration</h1>
+	<form action="#" th:action="@{/new}" th:object="${country_new}" method="post">
+		<div>
+			<label>Name:</label>
+			<input type="text" th:field="*{name}" /><br/>
+			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</span>
+		</div>
+		<div>
+			<label>Capital:</label>
+			<input type="text" th:field="*{capital}" /><br/>
+			<span th:if="${#fields.hasErrors('capital')}" th:errors="*{capital}">Capital error</span>
+		</div>
+		<div>
+			<label>CountryCode:</label>
+			<input type="text" th:field="*{countryCode}" /><br/>
+			<span th:if="${#fields.hasErrors('countryCode')}" th:errors="*{name}">CountryCode error</span>
+		</div>
+		<div>
+			<label>Population:</label>
+			<input type="text" th:field="*{population}" /><br/>
+			<span th:if="${#fields.hasErrors('population')}" th:errors="*{population}">Population error</span>
+		</div>
+		<button type="submit">Save</button>
+		<!--  
+		Name:<input type="text" th:field="*{name}"/><br>
+		Capital:<input type="text" th:field="*{capital}"/><br>
+		Country Code:<input type="text" th:field="*{countryCode}"/><br>
+		Population:<input type="text" th:field="*{population}"/><br>
+		<button type="submit">Save</button>
+		-->
+	</form>
+</div>
+</body>
+</html>

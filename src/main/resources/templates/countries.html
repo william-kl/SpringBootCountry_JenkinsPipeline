@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"> 
+	  
+<table>
+	<tr th:each="country:${countries}">  
+		<!--  <td th:text = "${country.id}"> ID</td>
+		<td th:text = "${country.name}"> Name</td>
+		<td th:text = "${country.capital}"> Capital</td>
+		<td th:text = "${country.population}"> Population</td>
+		<td th:text = "${country.countryCode}"> CountryCode</td>
+		-->
+		<td><a th:text = "${country.name}" th:href="@{/showDetails/{id}(id=${country.id})}">Show Detail</a></td>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td> <a th:href="@{/delete/{id}(id=${country.id})}">Delete</a></td>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<td> <a th:href="@{/edit/{id}(id=${country.id})}">Edit Population</a></td>
+	</tr>
+	<br>
+	<a href="/countryApp/new">Add New Country</a><br>
+</table>
+
+</html>
